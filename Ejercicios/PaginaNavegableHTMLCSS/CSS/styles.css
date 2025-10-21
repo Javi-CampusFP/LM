@@ -1,0 +1,149 @@
+/*
+Esto me explico mi profesor 
+David el año pasado que es 
+para reiniciar los bordes y 
+margenes por defecto del navegador
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Paleta de colores sacada de mycolor.space con hexadecimal para generar: #B7385A*/
+* p,a{
+  color: #FFFFFF;
+}
+
+header{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background-color: #9b3f74;
+}
+
+header a{
+  padding: 1%;
+}
+
+main{
+  height: 100vh;
+  width: 100%;
+  background-color: #b7385a;
+}
+
+footer{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #514d7c;
+}
+
+.containerPrincipal{
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.direccionFestival{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.parrafoInicio{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagenInicio{
+  width: 50%;
+  height: 100%;
+}
+
+.imagenInicio img{
+  width: 50%;
+  height: 100%;
+}
+
+.activo {
+  background-color: #364d6d;
+}
+
+.festivalParrafo{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.googleMapsDireccion{
+  width: 50%;
+  height: 100%;
+}
+
+.googleMapsDireccion iframe{
+  width: 100%;
+  height: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+table img{
+  width: 30%;
+  height: 30%;
+}
+
+.imagenContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.primeraFila{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.segundaFila{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.imagen-galeria{
+  width: 33%;
+  height: 100%;
+}
+
+.imagen-galeria img{
+  width: 100%;
+  height: 85%;
+}

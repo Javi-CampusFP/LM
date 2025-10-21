@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>FESTIVAL - CONTACTO</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <nav>INICIO</nav>
+        </a>
+        <a href="tabla.html">
+            <nav>TABLA</nav>
+        </a>
+        <a href="galeria.html">
+            <nav>GALERIA</nav>
+        </a>
+        <a href="contacto.html" class="activo">
+            <nav>CONTACTO</nav>
+        </a>
+    </header>
+    <main>
+        <form action="#" method="post" class="formulario">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="tel">Teléfono:</label>
+                <input type="tel" id="tel" name="tel" placeholder="+34 600 000 000">
+            </fieldset>
+
+            <fieldset>
+                <legend>Información del mensaje</legend>
+                <label for="fecha">Fecha de contacto preferida:</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="motivo">Motivo de contacto:</label>
+            <select id="motivo" name="motivo">
+                <option value="entradas">Compra de entradas</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="prensa">Prensa / Medios</option>
+                <option value="otros">Otros</option>
+            </select>
+
+            <p>Preferencia de contacto:</p>
+            <label><input type="radio" name="preferencia" value="email" checked> Email</label>
+            <label><input type="radio" name="preferencia" value="telefono"> Teléfono</label>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+            <label class="checkbox">
+                <input type="checkbox" id="acepto" name="acepto" required>
+                Acepto la política de privacidad y el tratamiento de mis datos.
+            </label>
+      </fieldset>
+
+        <div class="botones">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+        </div>
+    </form>
+    </main>
+    <footer>
+        <p>AUTOR: JAVIER BLÁZQUEZ CEREZO. 14/10/2025. LICENCIA MIT. <a href="./contacto.html">Contactame.</a> </p>
+    </footer>
+</body>
+</html>
