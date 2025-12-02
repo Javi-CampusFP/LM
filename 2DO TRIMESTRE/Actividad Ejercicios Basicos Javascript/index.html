@@ -1,34 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        /*Ejercicio 1*/
-        document.write("Ejercicio 1<br>")
-        numero1 = 6;
-        numero2 = 6;
-        ej1Suma = numero1+numero2;
-        document.write("La suma del " +numero1+ " más "+numero2+ " es: "+ej1Suma+"<br>")
-        /*Ejercicio 2*/
-        document.write("Ejercicio 2<br>")
-        numero3 = parseInt(prompt("Introduce un número para la variable 3: ",""));
-        numero4 = parseInt(prompt("Introduce un número para la variable 4: ",""));
-        ej2Suma = numero3 + numero4;
-        document.write("La suma del " +numero3+ " más "+numero4+ " es: "+ej2Suma+"<br>");
-        /*Ejercicio 3*/
-        document.write("Ejercicio 3<br>");
-        nombre = prompt("Introduce tu nombre: ","");
-        document.write("Hola, "+nombre);
-        /*Ejercicio 4*/
-        document.write("Ejercicio 4<br>")
-        numeroEj4 = parseInt(prompt("Introduce un número para sacar la tabla de multiplicar: ", ""))
-        for ( var i = 0; i < 11; i++){
-            document.write (i+" x "+numeroEj4+" = "+ (numeroEj4*i)+"<br>");
-        };
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Ejercicio 1
+            document.write("- Ejercicio 1<br>");
+            numero1 = 6;
+            numero2 = 6;
+            ej1Suma = numero1 + numero2;
+            document.write("La suma del " +numero1 +" más " +numero2 +" es: " +ej1Suma +"<br>");
+            // Ejercicio 2
+            document.write("- Ejercicio 2<br>");
+            numero3 = parseInt(prompt("Introduce un número para la variable 3: ", ""));
+            numero4 = parseInt(prompt("Introduce un número para la variable 4: ", ""));
+            ej2Suma = numero3 + numero4;
+            document.write("La suma del " +numero3 +" más " +numero4 +" es: " +ej2Suma +"<br>");
+            // Ejercicio 3
+            document.write("- Ejercicio 3<br>");
+            nombre = prompt("Introduce tu nombre: ", "");
+            document.write("Hola, " + nombre);
+            // Ejercicio 4
+            document.write("- Ejercicio 4<br>");
+            numeroEj4 = parseInt(prompt("Introduce un número para sacar la tabla de multiplicar: ",""));
+            for (var i = 0; i < 11; i++) {
+                document.write(i + " x " + numeroEj4 + " = " + numeroEj4 * i + "<br>",);
+            };
+            // Ejercicio 5
+            document.write("- Ejercicio 5<br>");
+            let edad = parseInt(prompt("Introduce tu edad: ", ""));
+            let ingresos = parseInt(prompt("Introduce tus ingresos: ", ""));
+            document.write("Tu edad es: " +edad +" y tus ingresos son: " +ingresos +"<br>");
+            if ((edad) >= 18 && (ingresos) >= 1000) {
+                document.write("Tus ingresos finales son: " + ingresos * 0.4);
+            } else {
+                document.write("Tus ingresos finales son: " + ingresos);
+            };
+            // Ejercicio 6
+            document.write("- Ejercicio 6<br>");
+            let multiplo = parseInt(prompt("Introduce un número para saber si es múltiplo de 3 o de 5: ", ""));
+            document.write("El número introducido es: "+multiplo+"<br>")
+            multiploDe5 = multiplo % 5;
+            multiploDe3 = multiplo % 3;
+            
+            if (multiploDe3 === 0 && multiploDe5 === 0) {
+                document.write("El número " + multiplo + " es múltiplo de 3 y de 5.");
+            } else if (multiploDe3 === 0) {
+                document.write("El número " + multiplo + " es múltiplo de 3.");
+            } else if (multiploDe5 === 0) {
+                document.write("El número " + multiplo + " es múltiplo de 5.");
+            } else {
+                document.write("El número " + multiplo + " no es múltiplo ni de 3 ni de 5.");
+            };
+        </script>
+    </body>
 </html>
