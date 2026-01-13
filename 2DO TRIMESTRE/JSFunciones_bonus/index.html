@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang=“es”>
+<head>
+<meta charset="utf-8">
+<title>Funciona Codigo JS</title>
+<meta name="description" content=“FuncionaCodigoJS”>
+</head>
+<body>
+     
+    <h2>calculadora</h2>
+    <script language=javascript>
+        function sumar(a,b){
+            return a+b;
+        }
+        function restar(a,b){
+            return a-b;
+        }
+        function multiplicacion(a,b){
+            return a*b;
+        }
+        function dividir(a,b){
+            if (b === 0){
+                alert("El número con el que vas a dividir no puede ser 0");
+            }
+            else{
+                return a/b;
+            }
+        }
+        var numero1 = parseFloat(prompt("Vamos a hacer una calculadora: Introduce el primer número:"));
+        var numero2 = parseFloat(prompt("Introduce el segundo número:"));
+        var operacion = prompt("Selecciona la operación: \n a) Suma \n b) Resta \n c) Multiplicación \n d) División");
+        // Realizar la operación seleccionada
+        switch (operacion) {
+            case 'a':
+                resultado = sumar(numero1,numero2);
+                document.write("El resultado de la suma es: " + resultado);
+                break;
+            case 'b':
+                resultado = restar(numero1,numero2);
+                document.write("El resultado de la resta es: " + resultado);
+                break;
+            case 'c':
+                resultado = multiplicacion(numero1,numero2);
+                document.write("El resultado de la multiplicación es: " + resultado);
+                break;
+            case 'd':
+                resultado = dividir(numero1,numero2);
+                document.write("El resultado de la división es: "+resultado);
+                break;
+            default:
+                document.write("Operación no válida.");
+        }
+    </script>
+    <noscript>No está activado JavaScript</noscript>
+</body>
+</html>

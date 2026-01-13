@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Horario Restaurante</title>
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid black; padding: 8px; height: 60px; }
+    td { cursor: pointer; text-align: center;}
+  </style>
+</head>
+<body>
+
+<h3>Horario del restaurante</h3>
+<p>Haz clic en una celda para indicar la persona, las horas y el color.</p>
+
+<table id="horario">
+  <thead>
+    <tr>
+      <th>Horas</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th>9:00 - 10:00</th>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
+        <td rowspan="2"></td>
+        <td rowspan="3"></td>
+    </tr>
+    <tr>
+        <th>10:00 - 11:00</th>
+    </tr>
+    <tr>
+        <th>11:00 - 11:50</th>
+        <td></td>
+    </tr>
+    
+    <tr>
+        <th>11:50 - 12:10</th>
+        <td colspan="5" style="text-align: center;">RECREO</td>
+    </tr>
+
+    <tr>
+        <th>12:10 - 13:00</th>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
+        <td></td>
+        <td rowspan="3"></td>
+    </tr>
+    <tr>
+        <th>13:00 - 14:00</th>
+        <td rowspan="2"></td>
+    </tr>
+    <tr>
+        <th>14:00 - 15:00</th>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+    document.querySelectorAll("#horario tbody td").forEach(td => {
+        td.addEventListener("click", () => {
+
+        const persona = prompt("Nombre de la asignatura:");
+        if (persona === null) return;
+
+        const color = prompt("Elige un color: red, blue, green, pink, purple, yellow");
+            td.style.backgroundColor = color.toLowerCase();
+            td.innerHTML = "<b>" + persona + "</b><br>";
+        });
+    });
+</script>
+
+</body>
+</html>
