@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Personajes del juego</p>
+    <div class="container">
+        <div class="card">
+            <div>
+                <p id="p1nombre"></p>
+                <p id="p1nivel"></p>
+                <p id="p1vida"></p>
+            </div>
+            <div>
+                <button>Atacar</button>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <p id="p2nombre"></p>
+                <p id="p2nivel"></p>
+                <p id="p2vida"></p>
+            </div>
+            <div>
+                <button >Atacar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        class Personaje{
+            constructor(nombre){
+                this.nombre = nombre;
+                this.vida = 100;
+                this.level = 1;
+            }
+            atacar(objetivo){
+                objetivo.recibirDanio(20);
+            }
+            recibirDanio(cantidad){
+                this.vida = this.vida - cantidad;
+            }
+            subirNivel(){
+                this.nivel = this.nivel + 1;
+            }
+        }
+        
+        Personaje.prototype.actualizar = function(){
+            document.getElementById("p2nombre").textContent = p2.nombre;
+            document.getElementById("p2nivel").textContent = p2.nivel;
+            document.getElementById("p2vida").textContent = p2.vida;
+            document.getElementById("p1nombre").textContent = p1.nombre;
+            document.getElementById("p1nivel").textContent = p1.nivel;
+            document.getElementById("p1vida").textContent = p1.vida;
+        }
+
+        const p1 = new Personaje("Gorlock");
+        const p2 = new Personaje("Gonzalo");
+    </script>
+</body>
+</html>
