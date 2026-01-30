@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personajes del juego</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,17 @@
                 <p id="p1nivel"></p>
                 <p id="p1vida"></p>
             </div>
+            <!-- Te puse la imagen embebida asi en la web porque me daba palo descargarmela, lo siento profe -->
+            <div class="imagen">
+                <img src="https://supermariorun.com/assets/img/hero/hero_chara_mario_update_pc.png" alt="Mario" width="100">
+            </div>
             <div>
-                <button>Atacar</button>
+                <button onclick="p1.atacar(p2); p1.actualizar(); setAccion('Mario ataca a Luigi')">
+                    Atacar
+                </button>
+                <button onclick="p1.subirNivel(); p1.actualizar(); setAccion('Mario sube de nivel')">
+                    Subir nivel
+                </button>
             </div>
         </div>
         <div class="card">
@@ -25,41 +34,67 @@
                 <p id="p2nivel"></p>
                 <p id="p2vida"></p>
             </div>
+            <div class="imagen">
+                <img src="https://static.wikia.nocookie.net/ssbb/images/2/2b/Luigi_NSMBWii.png/revision/latest?cb=20101114195130&path-prefix=es" alt="Luigi" width="100">
+            </div>
             <div>
-                <button >Atacar</button>
+                <button onclick="p2.atacar(p1); p2.actualizar(); setAccion('Luigi ataca a Mario')">
+                    Atacar
+                </button>
+                <button onclick="p2.subirNivel(); p2.actualizar(); setAccion('Luigi sube de nivel')">
+                    Subir nivel
+                </button>
             </div>
         </div>
     </div>
+    <p id="ultimaAccion">Última acción: ninguna</p>
+    <div>
+        <button onclick="cambiarColor('red')">Rojo</button>
+        <button onclick="cambiarColor('purple')">Morado</button>
+        <button onclick="cambiarColor('blue')">Azul</button>
+        <button onclick="cambiarColor('green')">Verde</button>
+    </div>
+
     <script>
-        
-        class Personaje{
-            constructor(nombre){
+        class Personaje {
+            constructor(nombre) {
                 this.nombre = nombre;
                 this.vida = 100;
-                this.level = 1;
+                this.nivel = 1; 
             }
-            atacar(objetivo){
+            atacar(objetivo) {
                 objetivo.recibirDanio(20);
             }
-            recibirDanio(cantidad){
-                this.vida = this.vida - cantidad;
+            recibirDanio(cantidad) {
+                this.vida -= cantidad;
             }
-            subirNivel(){
-                this.nivel = this.nivel + 1;
+            subirNivel() {
+                this.nivel += 1;
             }
-        }
-        
-        Personaje.prototype.actualizar = function(){
-            document.getElementById("p2nombre").textContent = p2.nombre;
-            document.getElementById("p2nivel").textContent = p2.nivel;
-            document.getElementById("p2vida").textContent = p2.vida;
-            document.getElementById("p1nombre").textContent = p1.nombre;
-            document.getElementById("p1nivel").textContent = p1.nivel;
-            document.getElementById("p1vida").textContent = p1.vida;
         }
 
-        const p1 = new Personaje("Gorlock");
-        const p2 = new Personaje("Gonzalo");
+        Personaje.prototype.actualizar = function() {
+            document.getElementById("p1nombre").textContent = "Nombre: " + p1.nombre;
+            document.getElementById("p1nivel").textContent = "Nivel: " + p1.nivel;
+            document.getElementById("p1vida").textContent = "Vida: " + p1.vida;
+
+            document.getElementById("p2nombre").textContent = "Nombre: " + p2.nombre;
+            document.getElementById("p2nivel").textContent = "Nivel: " + p2.nivel;
+            document.getElementById("p2vida").textContent = "Vida: " + p2.vida;
+        }
+
+        const p1 = new Personaje("Mario");
+        const p2 = new Personaje("Luigi");
+
+        p1.actualizar();
+
+        function setAccion(texto) {
+            document.getElementById("ultimaAccion").textContent = "Última acción: " + texto;
+        }
+
+        function cambiarColor(color) {
+            document.getElementById("ultimaAccion").style.color = color;
+        }
     </script>
 </body>
 </html>
